@@ -1,54 +1,52 @@
 interface IOyna
 {
-    void DriveCar();
+    void OyunOyna();
 }
 
 //Real Object 
-public class Car : ICar
+public class Oyun : IOyna
 {
-    public void DriveCar()
+    public void OyunOyna()
     {
         Console.WriteLine("Car has been driven!");
     }
 }
 
 //Proxy Object
-public class ProxyCar : ICar
+public class VekilOyun : IOyna
 {
-    private Driver driver;
-    private ICar realCar;
+    private Oyuncu oyuncu;
+    private IOyna GercekOyun;
 
-    public ProxyCar(Driver driver)
+    public VekilOyun(Oyuncu oyuncu)
     {
-        this.driver = driver;
-        this.realCar = new Car();
+        this.oyuncu = oyuncu;
+        this.GercekOyun = new Oyun();
     }
 
-    public void DriveCar()
+    public void OyunOyna()
     {
-        if (driver.Age <= 16)
-            Console.WriteLine("Sorry, the driver is too young to drive.");
+        if (oyuncu.yas <= 16)
+            Console.WriteLine("Yasın küçük.");
         else
-            this.realCar.DriveCar();
+            this.GercekOyun.OyunOyna();
      }
 }
 
-public class Driver
+public class Oyuncu
 {
-    private int Age { get; set; }
+    private int Yas { get; set; }
 
-    public Driver(int age)
+    public Oyuncu(int yas)
     {
-        this.Age = age;
+        this.Yas = yas;
     }
 }
 
-//How to use above Proxy class? 
 private void btnProxy_Click(object sender, EventArgs e)
 {
-    ICar car = new ProxyCar(new Driver(16));
-    car.DriveCar();
+    IOyun oyun = new VekilOyun(new Oyuncu(16));
+    oyun.OyunOyna();
 
-    car = new ProxyCar(new Driver(25));
-    car.DriveCar();
+ 
 }
