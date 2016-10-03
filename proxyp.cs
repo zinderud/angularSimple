@@ -3,16 +3,14 @@ interface IOyna
     void OyunOyna();
 }
 
-//Real Object 
 public class Oyun : IOyna
 {
     public void OyunOyna()
     {
-        Console.WriteLine("Car has been driven!");
+        Console.WriteLine("oyun başlasın!");
     }
 }
 
-//Proxy Object
 public class VekilOyun : IOyna
 {
     private Oyuncu oyuncu;
