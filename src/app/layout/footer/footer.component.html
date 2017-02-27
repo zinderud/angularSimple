@@ -1,0 +1,16 @@
+<md-toolbar color="primary">
+
+  <div class="fill"></div>
+
+  <span *ngFor="let list of Liste">
+    <a img src="{{list.imagedata}}">
+        
+      <span>{{link.name}}</span>
+      <md-icon>{{link.instructions}}</md-icon>
+
+    </a>
+  </span>
+
+  <div class="fill"></div>
+
+</md-toolbar>
