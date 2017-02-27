@@ -9,14 +9,23 @@
       "es2016",
       "dom"
     ],
+     "mapRoot": "./",
     "outDir": "../out-tsc/app",
     "target": "es5",
-    "module": "es2015",
+    "module": "es2015",  
     "baseUrl": "",
-    "types": []
+    "types": [ 
+      "hammerjs",
+      "jasmine"]
   },
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "files": [
+      "../node_modules/firebase/firebase.d.ts"
+    ]
 }
