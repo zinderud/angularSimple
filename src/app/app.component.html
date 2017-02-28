@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+
+<header>
+  <router-outlet name="header"></router-outlet>
+</header>
+
+<article fxFlex
+  [class.animation-content-out]="activateAnimation"
+  [class.animation-content-in]="!activateAnimation"
+>
+  <router-outlet></router-outlet>
+</article>
+
+<footer>
+  <router-outlet name="footer"></router-outlet>
+</footer>

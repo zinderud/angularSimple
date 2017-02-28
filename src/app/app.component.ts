@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
+import { AnimationsService } from './shared/animations/index';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+ 
+  public activateAnimation = false;
+public constructor(
+    private animationService: AnimationsService
+  ) {
+    this.animationService.activateAnimation$.subscribe(
+      (value) => this.activateAnimation = value
+    );
+  }
 }

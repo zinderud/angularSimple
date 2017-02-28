@@ -12,7 +12,7 @@
      "mapRoot": "./",
     "outDir": "../out-tsc/app",
     "target": "es5",
-    "module": "es2015",  
+    "module": "es6",  
     "baseUrl": "",
     "types": [ 
       "hammerjs",

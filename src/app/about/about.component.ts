@@ -1,14 +1,16 @@
+import { Component } from '@angular/core';
 
-import { Component, OnInit } from '@angular/core';
-
+import { Animations, AnimationsService } from '../shared/';
+import { AboutItem } from './interfaces/';
 
 @Component({
- 
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss']
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss'],
 })
-export class FooterComponent implements OnInit {
+
+export class AboutComponent extends Animations {
+ 
 
     public Liste: any[] = [
 
@@ -24,6 +26,14 @@ export class FooterComponent implements OnInit {
         }
 
     ]
-
-    ngOnInit() { }
+  /**
+   * Constructor of the class
+   *
+   * @param {AnimationsService} animationsService
+   */
+  public constructor(
+    protected animationsService: AnimationsService
+  ) {
+    super(animationsService);
+  }
 }

@@ -1,0 +1,19 @@
+header {
+  order: 1;
+  flex-shrink: 10;
+}
+
+article {
+  order: 2;
+  flex: 1;
+  overflow: auto;
+}
+
+ 
+
+footer {
+    order: 3;
+   flex-shrink: 10;
+ 
+ 
+}
